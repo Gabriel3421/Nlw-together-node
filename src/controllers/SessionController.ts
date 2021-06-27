@@ -6,7 +6,7 @@ class SessionController {
     const { email, password } = req.body;
     const sessionService = new SessionService();
     const token = await sessionService.execute({ email, password})
-    return res.status(200).send(token);
+    return res.status(200).send({token});
   }
 }
 
